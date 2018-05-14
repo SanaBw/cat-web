@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en" >
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/default.css">
+        <script src="assets/js/angular.js"></script>
+        <script src="assets/js/angular-route.js"></script>
+        <script src="assets/js/contact-form.js"></script>
+        <title>Entertaincat</title>    
+        <link rel="shortcut icon" type="image/png" href="assets/img/Cat-icon.png"/>    
+  </head>
+    <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+                    <a class="navbar-brand" href="#"><img src="assets/img/Cat-icon.png" style="height: 60px;"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                      <div class="navbar-nav">
+                        <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link" href="#aboutUs">About Us</a>
+                        <a class="nav-item nav-link" href="#contactUs">Contact Us</a>
+                      </div>
+                    </div>
+                    <div style="position: right"><a class="nav-item nav-link" href="#login" style="color: white">Login/Register</a></div>
+                  </nav>
+
+        <div id="headtitle">
+            <h1>Keep your cat entertained and focused with Entertaincat</h1>
+        </div> 	
+        <div id="wrapper">
+        <div id="featured-wrapper" >
+          <div id="featured" class="container">
+              <div class="row">
+                  <div class="col-sm-3">
+                      <a href="#!videos">
+                          <div class="column1"><img src="assets/img/icons8-documentary-50.png" >
+                            <div class="title">
+                                <h2>VIDEOS FOR CATS</h2>
+                            </div>
+                            <p>Entertain your cat with beautiful, high quality videos of birds and squirrels.</p>
+                          </div>
+                    </a>
+                  </div>
+                  <div class="col-sm-3">
+                      <a href="#!music">
+                          <div class="column2"><img src="assets/img/icons8-musical-notes-50.png" >
+                              <div class="title">
+                                  <h2>MUSIC FOR CATS</h2>
+                                </div>
+                                <p>Relaxing music that will keep your cat calm. Soundtracks include classical music and music made specially for cats.</p>
+                          </div>
+                      </a>
+                  </div>  
+                  <div class="col-sm-3"><a href="#!species">
+                      <div class="column3"><img src="assets/img/icons8-more-info-50.png" >
+                        <div class="title">
+                            <h2>CAT SPECIES</h2>
+                        </div>
+                        <p>Place for curious owners to get knowledge about cats and their heritage.</p>
+                      </div>
+                    </a></div>  
+                  <div class="col-sm-3">
+                      <a href="#!vet">
+                          <div class="column4"><img src="assets/img/icons8-stethoscope-50.png" >
+                            <div class="title">
+                                <h2>CLOSEST VET OFFICE </h2>
+                            </div>
+                            <p>Map of the closest veterinary offices.</p>
+                          </div>
+                        </a>
+                  </div>     
+          </div>
+        </div>       
+      </div>
+      
+      <div id="aboutUs">
+          <h1>About Us</h1>
+          <p>We are a team of one cat and one human. <br>
+            We came up with this project while looking for bird videos on YouTube. <br>
+            This website is a Web Programming project for Burch 2018.<br>
+            <img src="assets/img/gigiMe.bmp" style="width:600px; padding: 50px;" > 
+           </p>
+                             
+      </div>
+      <div id="contactUs">
+            <h1>Contact Us</h1>
+            <p>Any feedback is appreciated. Feel free to contact us!</p><br>
+            <div class="container" ng-app="ContactForm">
+                    <form name="cf" ng-controller="cfController as cfCtrl" ng-submit="submitForm(cf.$valid)" novalidate>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input id="name" type="text" name="name" ng-model="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email (optional)</label>
+                            <input id="email" type="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="msg">Message</label>
+                            <textarea id="msg" name="message" rows="4" ng-model="msg" required></textarea>
+                        </div>
+                        <input type="submit" value="Send" ng-disabled="cf.$invalid"/>
+                    </form>
+                </div> 
+        </div>
+        <footer>
+            <p>Web Programming 2018
+                <br>
+            Sanida Fatic sanida.fatic@stu.ibu.edu.ba
+            </p>
+        </footer>
+      <script src="assets/js/jquery-3.3.1.js"></script>
+      <script src="assets/js/bootstrap.js"></script>      
+    </body>
+  
+</html>
+
+
+
+
+
