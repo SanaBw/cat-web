@@ -1,56 +1,63 @@
 <!doctype html>
-<html lang="en" >
-    <head>
-        <base href="/">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/default.css">
-        <script src="assets/js/angular.js"></script>
-        <script src="assets/js/angular-route.js"></script>
-        <script src="/app/app.js"></script>
-        <script src="/app/routes.js"></script>
-        <script src="/app/controllers/userCtrl.js"></script>
-        <script src="/app/services/userServices.js"></script>
-        <script src="/app/controllers/mainCtrl.js"></script>
-        <script src="/app/services/authServices.js"></script>
+<html lang="en">
 
-        <title>Entertaincat</title>    
-        <link rel="shortcut icon" type="image/png" href="assets/img/Cat-icon.png"/>    
-  </head>
-    <body ng-app="catweb" ng-controller="mainCtrl as main" ng-show="main.loadme" ng-cloak>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
-                    <a class="navbar-brand" href="/"><img src="assets/img/Cat-icon.png" style="height: 60px;"></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                      <div class="navbar-nav">
-                        <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
-                        <a class="nav-item nav-link" href="/videos">Videos</a>
-                        <a class="nav-item nav-link" href="/music">Music</a>
-                        <a class="nav-item nav-link" href="/species">Cat Species</a>
-                        <a class="nav-item nav-link" href="/vet">Vet Offices</a>
-                      </div>
-                    </div>
-                    <div style="position: right"><a class="nav-item nav-link" href="/register" style="color: white" ng-show="!main.isLoggedIn">Login/Register</a></div>
-                    <div style="position: right"><a class="nav-item nav-link" href='/' ng-click="main.logout()" ng-show="main.isLoggedIn" style="color: white">Logout</a></div>
-                    <div style="position: right"><a class="nav-item nav-link" href="/profile" ng-show="main.isLoggedIn" style="color: white">{{main.username}}</a></div>
-                  </nav>
+<head>
+  <base href="/">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/default.css">
+  <script src="assets/js/angular.js"></script>
+  <script src="assets/js/angular-route.js"></script>
+  <script src="/app/app.js"></script>
+  <script src="/app/routes.js"></script>
+  <script src="/app/controllers/userCtrl.js"></script>
+  <script src="/app/services/userServices.js"></script>
+  <script src="/app/controllers/mainCtrl.js"></script>
+  <script src="/app/services/authServices.js"></script>
 
-      <div ng-view></div>     
-        <footer>
-            <p>Web Programming 2018
-                <br>
-            Sanida Fatic sanida.fatic@stu.ibu.edu.ba
-            </p>
-        </footer>
-      <script src="assets/js/jquery-3.3.1.js"></script>
-      <script src="assets/js/bootstrap.js"></script>      
-    </body>
-  
+  <title>Entertaincat</title>
+  <link rel="shortcut icon" type="image/png" href="assets/img/Cat-icon.png" />
+</head>
+
+<body ng-app="catweb" ng-controller="mainCtrl as main" ng-show="main.loadme" ng-cloak>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">
+      <img src="assets/img/Cat-icon.png" style="height: 60px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="/">Home
+          <span class="sr-only">(current)</span>
+        </a>
+        <a class="nav-item nav-link" href="/videos">Videos</a>
+        <a class="nav-item nav-link" href="/music">Music</a>
+        <a class="nav-item nav-link" href="/species">Cat Species</a>
+        <a class="nav-item nav-link" href="/vet">Vet Offices</a>
+      </div>
+    </div>
+    <div style="position: right">
+      <a class="nav-item nav-link" href="/register" style="color: white" ng-show="!main.isLoggedIn">Login/Register</a>
+    </div>
+    <div style="position: right">
+      <a class="nav-item nav-link" href='/' ng-click="main.logout()" ng-show="main.isLoggedIn" style="color: white">Logout</a>
+    </div>
+    <div style="position: right">
+      <a class="nav-item nav-link" href="/profile" ng-show="main.isLoggedIn" style="color: white">{{main.username}}</a>
+    </div>
+  </nav>
+
+  <div ng-view></div>
+  <footer>
+    <p>Web Programming 2018
+      <br> Sanida Fatic sanida.fatic@stu.ibu.edu.ba
+    </p>
+  </footer>
+  <script src="assets/js/jquery-3.3.1.js"></script>
+  <script src="assets/js/bootstrap.js"></script>
+</body>
+
 </html>
-
-
-
-
-
