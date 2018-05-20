@@ -2,9 +2,7 @@ angular.module('userControllers',['userServices'])
 
 .controller('regCtrl', function($http, $location, $timeout, User){
 
-    var app = this;
-
-   
+    var app = this;   
 
        this.regUser = function(regData){
            app.loading = true;
