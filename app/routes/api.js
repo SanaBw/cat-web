@@ -1,5 +1,7 @@
 //model for users in db
 var User = require('../models/user');
+var jwt = require('jsonwebtoken');
+var secret = 'gigi';
 
 module.exports = function(router) {
     //User registration
@@ -38,11 +40,34 @@ module.exports = function(router) {
                     if (!validPassword){
                         res.json({success:false, message: 'Incorrect password'});
                     } else {
-                        res.json({success: true, mesage: 'Logged in'});
+                        var token = jwt.sign({username: user.username, email:user.email}, secret,{expiresIn:'24h'});
+                        res.json({success: true, mesage: 'Logged in', 'token':token});
                     };
                };
            };
        });
+    });
+
+    router.use(function(req,res,next){
+        var token = (req.body && req.body.access_token) || (req.query && req.query.access_token) || req.headers['x-access-token'];
+        
+        if(token){
+            jwt.verify(token, secret, function(err, decoded){
+                if (err){                   
+                    res.json({ success:false, message:'Token invalid'});
+                    
+                } else {
+                    req.decoded = decoded;                    
+                    next();
+                }
+            });
+        } else {            
+            res.json({success: false, message:'No token'});
+        }
+    });
+
+    router.post('/me', function(req, res){
+        res.send(req.decoded);
     });
 
 return router;
