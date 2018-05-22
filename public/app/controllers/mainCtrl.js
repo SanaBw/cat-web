@@ -1,9 +1,22 @@
 angular.module('mainController', ['authServices'])
 
-    .controller('mainCtrl', function (Auth, $timeout, $location, $rootScope) {
+    .controller('mainCtrl', function (Auth, $timeout, $location, $rootScope,$scope,$http) {
         var app = this;
 
         app.loadme = false;
+        
+        $http.get('/api/vid').then(function (data) {
+            $scope.videos = data.data.message;
+        });
+
+        $http.get('/api/audio').then(function (data) {
+            $scope.music = data.data.message;
+        });
+
+        $http.get('/api/spec').then(function (data) {
+            $scope.species = data.data.message;
+        });
+      
 
         $rootScope.$on('$routeChangeStart', function () {
 
@@ -47,4 +60,5 @@ angular.module('mainController', ['authServices'])
             Auth.logout();
             window.location.reload();
         };
+        
     });

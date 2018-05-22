@@ -13,7 +13,9 @@ body
 	margin: 0px;
 	padding: 0px;
 	background-image: url(../img/cat.jpeg);
-	background-image: no-repeat;
+	background-image: no repeat;
+	background-attachment: fixed;
+    background-position: center; 
 	font-family: 'Oswald', sans-serif;
 	font-size: 13pt;
 	font-weight: 300;
@@ -683,4 +685,38 @@ form{
 	  
   }
 
-  
+/*********************************************************************************/
+/*                                  Videos&Music                                 */
+/*********************************************************************************/
+
+
+#video, #song{
+	margin-top: 15%;
+	margin-right: 15%;
+	margin-left: 15%;
+	box-shadow: 5px 5px 5px #660066;
+}
+
+#videos h1, #music h1{
+	margin-left: 15%;
+	color:white;
+	font-size:20px;
+
+}
+
+/*********************************************************************************/
+/*                                  Species                                      */
+/*********************************************************************************/
+
+#sort {
+	margin: 15% 15% 2% 15%;
+	box-shadow: 5px 5px 5px #660066;
+}
+
+#species h1{
+	margin-left: 15%;
+	color:white;
+	font-size:20px;
+}
+
+

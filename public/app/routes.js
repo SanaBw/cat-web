@@ -36,7 +36,7 @@ var app = angular.module('appRoutes', ['ngRoute'])
             requireBase: false
         });
     });
-/* redirect un autenticated routes back home */
+/* redirect unautenticated routes back home */
 app.run(['Auth', '$rootScope', '$location', function (Auth, $rootScope, $location) {
     $rootScope.$on('$routeChangeStart', function (event, next, current) {
         if ((next.$$route.authenticated != undefined) && (Auth.isLoggedIn() != next.$$route.authenticated)) {

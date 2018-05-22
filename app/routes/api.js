@@ -2,8 +2,111 @@
 var User = require('../models/user');
 var jwt = require('jsonwebtoken');
 var secret = 'gigi';
+//model for videos in db
+var Video = require('../models/video');
+//model for audio in db
+var Song = require('../models/music');
+//model for audio in db
+var Sort = require('../models/species');
 
 module.exports = function (router) {
+
+    //post videos
+    router.post('/vid', function(req,res,err){
+        var video = new Video();
+        video.name = req.body.name;
+        video.source = req.body.source;   
+        if (req.body.name == null || req.body.name =='' 
+            || req.body.source == null || req.body.source=='') {
+                res.json({success:false, message: 'Enter name and source'});
+            } else {
+                video.save(function(err){
+                    if (err){
+                        res.json({success:false, message:err.errors});
+                    } else {
+                        res.json({success:true, message:'Video saved'});
+                    }
+                });
+            }   
+    });
+
+    //get video sources
+    router.get('/vid', function(req, res){
+        Video.find({}).exec(function(err, Video){
+            if (err){
+                res.json({success:false, message:'Cannot get videos'});
+            } else {
+                res.json({success:true, message: Video});
+                
+            }
+        });
+        
+    });
+
+    //post audio
+    router.post('/audio', function(req,res,err){
+        var song = new Song();
+        song.name = req.body.name;
+        song.source = req.body.source;   
+        if (req.body.name == null || req.body.name =='' 
+            || req.body.source == null || req.body.source=='') {
+                res.json({success:false, message: 'Enter name and source'});
+            } else {
+                song.save(function(err){
+                    if (err){
+                        res.json({success:false, message:err.errors});
+                    } else {
+                        res.json({success:true, message:'Audio saved'});
+                    }
+                });
+            }   
+    });
+
+    //get audio sources
+    router.get('/audio', function(req, res){
+        Song.find({}).exec(function(err, Song){
+            if (err){
+                res.json({success:false, message:'Cannot get songs'});
+            } else {
+                res.json({success:true, message: Song});
+                
+            }
+        });
+        
+    });
+
+    //post kind
+    router.post('/spec', function(req,res,err){
+        var sort = new Sort();
+        sort.name = req.body.name;
+        sort.source = req.body.source;   
+        if (req.body.name == null || req.body.name =='' 
+            || req.body.source == null || req.body.source=='') {
+                res.json({success:false, message: 'Enter name and source'});
+            } else {
+                sort.save(function(err){
+                    if (err){
+                        res.json({success:false, message:err.errors});
+                    } else {
+                        res.json({success:true, message:'Sort saved'});
+                    }
+                });
+            }   
+    });
+
+    //get species src
+    router.get('/spec', function(req, res){
+        Sort.find({}).exec(function(err, Sort){
+            if (err){
+                res.json({success:false, message:'Cannot get songs'});
+            } else {
+                res.json({success:true, message: Sort});
+                
+            }
+        });
+        
+    });
+
     //User registration
     router.post('/users', function (req, res) {
         var user = new User();
@@ -73,6 +176,7 @@ module.exports = function (router) {
         });
     });
 
+    //check session token
     router.use(function (req, res, next) {
         var token = (req.body && req.body.access_token) || (req.query && req.query.access_token) || req.headers['x-access-token'];
 
@@ -91,6 +195,7 @@ module.exports = function (router) {
         }
     });
 
+    //current user token
     router.post('/me', function (req, res) {
         res.send(req.decoded);
     });
