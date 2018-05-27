@@ -4,11 +4,11 @@ var Schema = mongoose.Schema;
 var VideoSchema = new Schema({
     name: {
         type: String,
-        required: true        
+        required: true
     },
     source: {
         type: String,
-        required:true
+        required: true
     }
 });
 

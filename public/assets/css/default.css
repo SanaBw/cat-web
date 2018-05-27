@@ -22,13 +22,12 @@ body
 	color:white;    
 }
 
-
 h1, h2, h3
 {
 	margin: 0;
 	padding: 0;
 	font-weight: 600;
-	color: #454445;
+	color: white;
 	text-shadow: 6px 6px 6px #660066;
 
 }
@@ -49,7 +48,6 @@ p
 	line-height: 180%;
 }
 
-
 a
 {
 	color: #2C383B;
@@ -66,20 +64,19 @@ a:hover
 	width: 1200px;
 }
 
-#navbar{
+#navbar
+{
 	font-family: 'Oswald', sans-serif;
 } 
 
-#aboutUs{
-	margin-top: 250px;
-	background:black;	
+#aboutUs
+{
+	margin-top: 250px;	
 	height: 800px;
-	border: 2px solid black;
-	border-radius: 25px;
 }
 
-
-#aboutUs h1{
+#aboutUs h1
+{
 	color: #CC99CC;
 	font-family:'Parisienne';
 	text-align: center;
@@ -88,14 +85,17 @@ a:hover
 
 }
 
-#aboutUs p{
+#aboutUs p
+{
 	color: white;
 	font-family: 'Oswald', sans-serif;
 	text-align: center;
 	font-size: 20px;
 
 }
-footer{
+
+footer
+{
 	background:black;
 	height: 100px;
 	position:relative;
@@ -299,7 +299,6 @@ ul.style3 .icon
 	color: #FFF;
 }
 
-
 .button-big
 {
 	padding: 1.6em 4em;
@@ -307,10 +306,10 @@ ul.style3 .icon
 	font-weight: 900;
 }
 
-#buttons{
+#buttons
+{
 	margin-top: 5%;
 	text-shadow: 6px 6px 6px white;
-
 }
 
 /*********************************************************************************/
@@ -343,7 +342,8 @@ ul.style3 .icon
 /*********************************************************************************/
 	
 
-#headtitle h1 {
+#headtitle h1 
+{
     padding-top: 3%;
     color:#ccc;
     border-radius: 6px;
@@ -353,15 +353,17 @@ ul.style3 .icon
 	font-size: 70px;
 	font-family: 'Parisienne', cursive;
 	text-align: center;
-  }
-#headtitle h1:hover {
+}
+
+#headtitle h1:hover 
+{
     color: #CC99CC;
     border-radius: 50%;
-  }
+}
+
 #header-wrapper
 {
-	padding: 2em 0em;
-    
+	padding: 2em 0em;    
 }
 
 #header
@@ -421,10 +423,6 @@ ul.style3 .icon
 	padding: 0em 7em;
 }
 
-
-
-
-
 /*********************************************************************************/
 /* Featured                                                                      */
 /*********************************************************************************/
@@ -440,8 +438,7 @@ ul.style3 .icon
 
 #featured
 {
-	overflow: hidden;
-	
+	overflow: hidden;	
 }
 
 #featured .major
@@ -494,7 +491,8 @@ ul.style3 .icon
 	color: #FFF;
 }
 
-#featured p{
+#featured p
+{
 	color: #FFF;
 	font-size: 20px;
 }
@@ -504,27 +502,35 @@ ul.style3 .icon
 /* Contact Us                                                                    */
 /*********************************************************************************/
 
-#contactUs body, input, textarea {
+#contactUs body, input, textarea 
+{
 	font-family: "Parisienne";
 	font-size: 20px;
 }
-#contactUs body {
+
+#contactUs body 
+{
 	background:#CC99CC ;
 	color: #660066;
 }
-#contactUs label {
+
+#contactUs label 
+{
 	display: block;
 	font-weight: 700;
 	margin: 0 0 8px 0;
 	min-width: 50px;
 }
-#contactUs input, textarea {
+
+#contactUs input, textarea 
+{
 	border: 1px solid #ccc;
 	padding: 4px 0;
 	width: 100%;
-	-webkit-appearance: none;
 }
-#contactUs input[type=submit] {
+
+#contactUs input[type=submit] 
+{
 	background: #660066;
 	border: 0;
 	color: white;
@@ -532,42 +538,52 @@ ul.style3 .icon
 	transition: background 0.2s;
 }
 
-#contactUs input[disabled] {
+#contactUs input[disabled] 
+{
 	opacity: 0.5;
 }
-.container form {
+
+.container form 
+{
 	background: #CC99CC;
 	box-shadow: 0 2px 4px #660066;
 	margin: auto;
 	padding: 16px;
 	max-width: 600px;
 }
-form-group {
+
+form-group 
+{
 	margin-bottom: 16px;
 }
+
 input.ng-invalid.ng-dirty,
-textarea.ng-invalid.ng-dirty{
+textarea.ng-invalid.ng-dirty
+{
 	border-color: red;
 	box-shadow: 0 0 4px red;
 }
 
-form{
+form
+{
 	font-family: "Parisienne";
 	font-size: 20px;
-
 }
 
 /*********************************************************************************/
 /* Register/Login                                                                */
 /*********************************************************************************/
 
-#register {
+#register 
+{
 	margin: 0;
 	margin-bottom: 20%;
 	padding: 0;
 	box-sizing: border-box;
-  }
-  #register body {
+}
+
+#register body 
+{
 	font-family: 'Oswald', sans-serif;
 	font-size: 14px;
 	background-size: 200% 100% !important;
@@ -575,24 +591,31 @@ form{
 	transform: translate3d(0, 0, 0);
 	height: 100vh;
   }
-  .user {
+
+  .user 
+  {
 	width: 90%;
 	max-width: 340px;
 	margin: 10vh auto;
   }
-  .user__header {
+
+  .user__header 
+  {
 	text-align: center;
 	opacity: 0;
 	transform: translate3d(0, 500px, 0);
 	animation: arrive 500ms ease-in-out 0.7s forwards;
   }
+
   .user__title {
 	font-size: 14px;
 	margin-bottom: -10px;
 	font-weight: 500;
 	color: white;
   }
-  .form {
+
+  .form 
+  {
 	margin-top: 40px;
 	border-radius: 6px;
 	overflow: hidden;
@@ -600,40 +623,50 @@ form{
 	transform: translate3d(0, 500px, 0);
 	animation: arrive 500ms ease-in-out 0.9s forwards;
   }
-  .form--no {
+
+  .form--no 
+  {
 	animation: NO 1s ease-in-out;
 	opacity: 1;
 	transform: translate3d(0, 0, 0);
   }
-  .form__input {
+
+  .form__input 
+  {
 	display: block;
 	width: 100%;
 	padding: 20px;
 	font-family: "Roboto";
-	-webkit-appearance: none;
 	border: 0;
 	outline: 0;
 	transition: 0.3s;
   }
-  .form__input:focus {
+
+  .form__input:focus 
+  {
 	background: #f7f7f7;
   }
-  .btn {
+
+  .btn 
+  {
 	display: block;
 	width: 100%;
 	padding: 20px;
 	font-family: 'Oswald', sans-serif;
-	-webkit-appearance: none;
 	outline: 0;
 	border: 0;
 	color: white;
 	background: #660066;
 	transition: 0.3s;
   }
-  .btn:hover {
+
+  .btn:hover 
+  {
 	background: #a09486;
   }
-  @keyframes NO {
+
+  @keyframes NO 
+  {
 	from, to {
 	  -webkit-transform: translate3d(0, 0, 0);
 	  transform: translate3d(0, 0, 0);
@@ -647,7 +680,9 @@ form{
 	  transform: translate3d(10px, 0, 0);
 	}
   }
-  @keyframes arrive {
+
+  @keyframes arrive 
+  {
 	0% {
 	  opacity: 0;
 	  transform: translate3d(0, 50px, 0);
@@ -657,7 +692,9 @@ form{
 	  transform: translate3d(0, 0, 0);
 	}
   }
-  @keyframes move {
+
+  @keyframes move 
+  {
 	0% {
 	  background-position: 0 0;
 	}
@@ -669,20 +706,38 @@ form{
 	}
   }
 
- .success{
+ .success
+ {
+	margin: 5% auto;
+	width: 40%;
+	opacity: 0;
+	transform: translate3d(0, 500px, 0);
+	animation: arrive 500ms ease-in-out 0.9s forwards;	  
+  }
+
+  #register p
+  {
+	font-family: 'Oswald', sans-serif;
+	font-size: 15px;
+	color:#CC99CC;	  
+  }
+
+  #resend
+  {
 	margin: 5% auto;
 	width: 30%;
 	opacity: 0;
 	transform: translate3d(0, 500px, 0);
 	animation: arrive 500ms ease-in-out 0.9s forwards;
-	  
-  }
-
-  #register p{
+	display: block;
+	width: 20%;
+	padding: 20px;
 	font-family: 'Oswald', sans-serif;
-	font-size: 15px;
-	color:#CC99CC;
-	  
+	outline: 0;
+	border: 0;
+	color: white;
+	background: #CC99CC;
+	transition: 0.3s;
   }
 
 /*********************************************************************************/
@@ -690,33 +745,42 @@ form{
 /*********************************************************************************/
 
 
-#video, #song{
+#video, #song
+{
 	margin-top: 15%;
 	margin-right: 15%;
 	margin-left: 15%;
 	box-shadow: 5px 5px 5px #660066;
 }
 
-#videos h1, #music h1{
+#videos h1, #music h1
+{
 	margin-left: 15%;
 	color:white;
 	font-size:20px;
-
 }
 
 /*********************************************************************************/
-/*                                  Species                                      */
+/*                                  Species&Map                                  */
 /*********************************************************************************/
 
-#sort {
+#sort 
+{
 	margin: 15% 15% 2% 15%;
 	box-shadow: 5px 5px 5px #660066;
 }
 
-#species h1{
+#species h1
+{
 	margin-left: 15%;
 	color:white;
 	font-size:20px;
+}
+
+#map
+{
+	margin:5% 5% 5% 5%;
+	box-shadow: 5px 5px 5px 5px #660066;
 }
 
 

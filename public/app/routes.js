@@ -25,7 +25,16 @@ var app = angular.module('appRoutes', ['ngRoute'])
             .when('/profile', {
                 templateUrl: '/app/views/pages/users/profile.html',
                 authenticated: true
-
+            })
+            .when('/activate/:token', {
+                templateUrl: '/app/views/pages/users/activation/activate.html',
+                controller: 'emailCtrl',
+                controllerAs: 'email'
+            })
+            .when('/resend', {
+                templateUrl: '/app/views/pages/users/activation/resend.html',
+                controller: 'resendCtrl',
+                controllerAs: 'resend'
             })
             .otherwise({
                 redirectTo: '/'
@@ -36,6 +45,7 @@ var app = angular.module('appRoutes', ['ngRoute'])
             requireBase: false
         });
     });
+
 /* redirect unautenticated routes back home */
 app.run(['Auth', '$rootScope', '$location', function (Auth, $rootScope, $location) {
     $rootScope.$on('$routeChangeStart', function (event, next, current) {

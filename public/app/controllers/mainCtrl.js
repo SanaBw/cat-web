@@ -1,25 +1,20 @@
 angular.module('mainController', ['authServices'])
 
-    .controller('mainCtrl', function (Auth, $timeout, $location, $rootScope,$scope,$http) {
+    .controller('mainCtrl', function (Auth, $timeout, $location, $rootScope, $scope, $http) {
         var app = this;
-
         app.loadme = false;
-        
+
         $http.get('/api/vid').then(function (data) {
             $scope.videos = data.data.message;
         });
-
         $http.get('/api/audio').then(function (data) {
             $scope.music = data.data.message;
         });
-
         $http.get('/api/spec').then(function (data) {
             $scope.species = data.data.message;
         });
-      
 
         $rootScope.$on('$routeChangeStart', function () {
-
             if (Auth.isLoggedIn()) {
                 app.isLoggedIn = true;
                 Auth.getUser().then(function (data) {
@@ -33,12 +28,10 @@ angular.module('mainController', ['authServices'])
             }
         });
 
-
-
         this.logUser = function (logData) {
             app.loading = true;
             app.errorMsg = false;
-
+            app.expired = false;
             Auth.login(app.logData).then(function (data) {
                 if (data.data.success) {
                     app.loading = false;
@@ -49,16 +42,21 @@ angular.module('mainController', ['authServices'])
                         app.successMsg = null;
                     }, 2000);
                 } else {
-                    app.loading = false;
-                    app.errorMsg = data.data.message;
+                    if (data.data.expired) {
+                        app.expired = true;
+                        app.loading = false;
+                        app.errorMsg = data.data.message;
+                    } else {
+                        app.loading = false;
+                        app.errorMsg = data.data.message;
+                    }
                 }
             });
-
         };
 
         this.logout = function () {
             Auth.logout();
             window.location.reload();
         };
-        
+
     });

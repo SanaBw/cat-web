@@ -1,0 +1,19 @@
+<div id="register" ng-submit="resend.checkCredentials(logData)">
+    <div class="user">
+        <form class="form" name="loginForm">
+            <div class="form__group">
+                <input type="text" placeholder="Username" name="username" class="form__input" ng-model="resend.logData.username" required/>
+            </div>
+            <div class="form__group">
+                <input type="password" placeholder="Password" name="password" class="form__input" ng-model="resend.logData.password" required/>
+            </div>
+            <button class="btn" type="submit">Resend</button>
+        </form>
+    </div>
+    <div class="success" ng-show="resend.successMsg">
+        <div class="alert alert-success">{{main.successMsg}}</div>
+    </div>
+    <div class="success" ng-show="resend.errorMsg">
+        <div class="alert alert-danger">{{main.errorMsg}}</div>
+    </div>
+</div>

@@ -1,3 +1,4 @@
+<!-- REGISTER FORM -->
 <div class="row">
     <div id="register" ng-submit="register.regUser(regData)" class="col-md-6">
         <div class="user">
@@ -15,8 +16,7 @@
                     <p class="form-text" ng-show="(!registerForm.email.$pristine && registerForm.email.$error.required) || (registerForm.$submitted && registerForm.email.$error.required)">E-mail is required</p>
                 </div>
                 <div class="form__group">
-                    <input type="password" placeholder="Password" name="password" class="form__input" ng-model="register.regData.password" required
-                    />
+                    <input type="password" placeholder="Password" name="password" class="form__input" ng-model="register.regData.password" required/>
                     <p class="form-text" ng-show="(!registerForm.password.$pristine && registerForm.password.$error.required) || (registerForm.$submitted && registerForm.password.$error.required)">Password is required</p>
                 </div>
                 <button class="btn" type="submit">Register</button>
@@ -30,17 +30,25 @@
         </div>
     </div>
 
+    <!-- LOGIN FORM -->
     <div id="register" ng-submit="main.logUser(logData)" class="col-md-6">
         <div class="user">
             <form class="form" name="loginForm">
                 <div class="form__group">
-                    <input type="text" placeholder="Username" name="username" class="form__input" ng-model="main.logData.username" required />
+                    <input type="text" placeholder="Username" name="username" class="form__input" ng-model="main.logData.username" required/>
                 </div>
                 <div class="form__group">
                     <input type="password" placeholder="Password" name="password" class="form__input" ng-model="main.logData.password" required/>
                 </div>
                 <button class="btn" type="submit">Login</button>
             </form>
+        </div>
+        <div>
+            <a href="/resend">
+                <button id="resend" class="btn" ng-show="main.expired">
+                    Resend activation link
+                </button>
+            </a>
         </div>
         <div class="success" ng-show="main.successMsg">
             <div class="alert alert-success">{{main.successMsg}}</div>
