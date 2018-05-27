@@ -89,7 +89,7 @@ module.exports = function (router) {
                     console.log(err);
                 } else {
                     var email = {
-                        from: 'sanida.fatic@stu.ibu.edu.ba',
+                        from: 'staff@catweb.ba',
                         to: user.email,
                         subject: 'Activation Link Resent',
                         html: 'Hello <strong>' + user.username + '</strong><br> New activation link. Click here to activate your account:<br><br><a href="http://localhost:8000/activate/' + user.temptoken + '">Here</a>'
@@ -242,7 +242,7 @@ module.exports = function (router) {
                     }
                 } else {
                     var email = {
-                        from: 'sanida.fatic@stu.ibu.edu.ba',
+                        from: 'staff@catweb.ba',
                         to: user.email,
                         subject: 'Activation Link',
                         html: 'Hello <strong>' + user.username + '</strong><br> Thank you for registering. Click here to activate your account:<br><br><a href="http://localhost:8000/activate/' + user.temptoken + '">Here</a>'
