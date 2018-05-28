@@ -22,7 +22,7 @@ module.exports = function (router) {
     //sendgrid auth
     var options = {
         auth: {
-            api_key: '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'
+            api_key: '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'
         }
     }
     var client = nodemailer.createTransport(sgTransport(options));
