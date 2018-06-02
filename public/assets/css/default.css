@@ -312,6 +312,22 @@ ul.style3 .icon
 	text-shadow: 6px 6px 6px white;
 }
 
+#favBut, #unfavBut{
+	width: 4%;
+	height: 4%;
+	background-color: transparent;
+	margin-right: 15%;
+	margin-left:15%;
+	margin-top:0%;
+	margin-bottom: 0%;
+	background-image: url("../img/fav.png");
+	background-repeat: no-repeat;	
+}
+
+#favBut:hover{
+	background-image: url("../img/fav2.png");
+}
+
 /*********************************************************************************/
 /* Heading Titles                                                                */
 /*********************************************************************************/
@@ -745,9 +761,9 @@ form
 /*********************************************************************************/
 
 
-#video, #song
+#video, #song, #fav
 {
-	margin-top: 15%;
+	margin-top: 10%;
 	margin-right: 15%;
 	margin-left: 15%;
 	box-shadow: 5px 5px 5px #660066;

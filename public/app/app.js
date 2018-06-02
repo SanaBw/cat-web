@@ -1,4 +1,4 @@
-angular.module('catweb', ['appRoutes', 'userControllers', 'userServices', 'mainController', 'authServices', 'emailController'])
+angular.module('catweb', ['appRoutes', 'userControllers', 'userServices', 'mainController', 'authServices', 'emailController','favServices'])
 
     //intercept every req with AuthInterceptors
     .config(function ($httpProvider) {

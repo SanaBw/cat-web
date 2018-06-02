@@ -3,6 +3,7 @@
         <div col-md-6 ng-repeat="video in videos">
             <iframe id="video" width="600" height="350" ng-src={{video.source}} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             <h1>{{video.name}}</h1>
+            <button class="btn" ng-show="main.isLoggedIn" ng-click="main.saveFav(video.source)" onclick="$(this).hide();" id="favBut"></button>
         </div>
     </div>
 </div>

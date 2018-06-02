@@ -1,5 +1,10 @@
 <div ng-show="main.isLoggedIn">
-    <h1>{{main.username}}'s profile</h1>
+    <h1 style="margin-left: 40%; margin-right: 40%;">{{main.username}}'s Favorites</h1>
     <div class="row">
+            <div col-md-6 ng-repeat="fav in favorites track by $index">
+                    <iframe id="fav" width="600" height="350" ng-src={{fav.source}} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <h1>{{fav.name}}</h1>
+                    <button class="btn" ng-click="main.removeFav(fav)" id="unfavBut"></button>                          
+                </div>
     </div>
 </div>

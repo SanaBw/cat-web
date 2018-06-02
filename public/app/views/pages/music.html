@@ -3,6 +3,7 @@
         <div col-md-6 ng-repeat="song in music">
             <iframe id="song" width="600" height="350" ng-src={{song.source}} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             <h1>{{song.name}}</h1>
+             <button class="btn" ng-show="main.isLoggedIn" ng-click="main.saveFav(song.source)" onclick="$(this).hide();" id="favBut"></button>    
         </div>
     </div>
 </div>

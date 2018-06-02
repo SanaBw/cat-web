@@ -9,10 +9,11 @@ var secret = 'gigi';
 var nodemailer = require('nodemailer');
 var sgTransport = require('nodemailer-sendgrid-transport');
 
-//models for videos, audio and species in DB
+//models for videos, audio, species and favorites in DB
 var Video = require('../models/video');
 var Song = require('../models/music');
 var Sort = require('../models/species');
+var Fav = require('../models/favorites');
 
 module.exports = function (router) {
 
@@ -193,7 +194,7 @@ module.exports = function (router) {
     router.get('/spec', function (req, res) {
         Sort.find({}).exec(function (err, Sort) {
             if (err) {
-                res.json({ success: false, message: 'Cannot get songs' });
+                res.json({ success: false, message: 'Cannot get species' });
             } else {
                 res.json({ success: true, message: Sort });
             }
@@ -311,6 +312,49 @@ module.exports = function (router) {
     //current user token
     router.post('/me', function (req, res) {
         res.send(req.decoded);
+    });
+
+    //--------------------------FAVORITES--------------------------//
+
+    //post favorites
+    router.post('/favorites', function (req, res) {
+        var fav = new Fav();
+        fav.username = req.body.username;
+        fav.source = req.body.source;
+        if (req.body.username == null || req.body.username == ''
+            || req.body.source == null || req.body.source == '') {
+            res.json({ success: false, message: req.body.username });
+        } else {
+            fav.save(function (err) {
+                if (err) {
+                    res.json({ success: false, message: err.errors });
+                } else {
+                    res.json({ success: true, message: 'Favorite saved' });
+                }
+            });
+        }
+    });
+
+    //get favorites
+    router.get('/favorites', function (req, res) {
+        Fav.find({ username: req.decoded.username }).select('source _id').exec(function (err, Fav) {
+            if (err) {
+                res.json({ success: false, message: 'Cannot get favs' });
+            } else {
+                res.json({ success: true, message: Fav });
+            }
+        });
+    });
+
+    //delete favorite
+    router.delete('/favorites/:id', function (req, res) {
+        Fav.findByIdAndRemove(req.params.id, function (err, Fav) {
+            if (err) {
+                res.json({ success: false, message: err });
+            } else {
+                res.json({ success: true, message: "Removed" });
+            }
+        });
     });
 
     return router;
