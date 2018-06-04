@@ -93,7 +93,7 @@ module.exports = function (router) {
                         from: 'staff@catweb.ba',
                         to: user.email,
                         subject: 'Activation Link Resent',
-                        html: 'Hello <strong>' + user.username + '</strong><br> New activation link. Click here to activate your account:<br><br><a href="http://entertaincat.com/activate/' + user.temptoken + '">Here</a>'
+                        html: 'Hello <strong>' + user.username + '</strong><br> New activation link. Click here to activate your account:<br><br><a href="http://www.entertaincat.com/activate/' + user.temptoken + '">Here</a>'
                     };
                     client.sendMail(email, function (err, info) {
                         if (err) {
@@ -246,7 +246,7 @@ module.exports = function (router) {
                         from: 'staff@catweb.ba',
                         to: user.email,
                         subject: 'Activation Link',
-                        html: 'Hello <strong>' + user.username + '</strong><br> Thank you for registering. Click here to activate your account:<br><br><a href="http://entertaincat.com/activate/' + user.temptoken + '">Here</a>'
+                        html: 'Hello <strong>' + user.username + '</strong><br> Thank you for registering. Click here to activate your account:<br><br><a href="http://www.entertaincat.com/activate/' + user.temptoken + '">Here</a>'
                     };
 
                     client.sendMail(email, function (err, info) {
