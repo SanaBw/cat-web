@@ -16,7 +16,7 @@ app.use(express.static(__dirname + '/public'));
 app.use('/api', appRoutes);
 
 
-mongoose.connect('mongodb://entertaincat.com/project', function(err){
+mongoose.connect('mongodb://sanida:sanida1@ds147180.mlab.com:47180/entertaincatdb', function(err){
     if (err){
         console.log("Not connected to the database." + err)
     } else {
