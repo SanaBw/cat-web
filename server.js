@@ -16,7 +16,7 @@ app.use(express.static(__dirname + '/public'));
 app.use('/api', appRoutes);
 
 
-mongoose.connect('mongodb://localhost:27017/project', function(err){
+mongoose.connect('mongodb://entertaincat.com/project', function(err){
     if (err){
         console.log("Not connected to the database." + err)
     } else {
@@ -28,6 +28,6 @@ app.get('*', function(req, res){
     res.sendFile(path.join(__dirname + '/public/app/views/index.html'));
 });
 
-app.listen(process.env.port || 8000, function(){
+app.listen(process.env.port || 8080, function(){
     console.log("Running the server..");
 });
