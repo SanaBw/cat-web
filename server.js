@@ -28,6 +28,6 @@ app.get('*', function(req, res){
     res.sendFile(path.join(__dirname + '/public/app/views/index.html'));
 });
 
-app.listen(process.env.port || 8080, function(){
+app.listen(process.env.PORT || 8080, function(){
     console.log("Running the server..");
 });
